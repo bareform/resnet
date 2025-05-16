@@ -145,6 +145,7 @@ def main():
   print(f"Device: {device}")
 
   model = model_mapping.get(args.model_name, None)
+  model = model.to(device)
   print(f"Training: {args.model_name}")
   if model is None:
     raise RuntimeError("something went wrong: model was not set!")
